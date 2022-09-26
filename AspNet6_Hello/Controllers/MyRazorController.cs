@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//using Microsoft.AspNetCore.Mvc;  --> read from global using statement
 
 namespace AspNet6_Hello.Controllers
 {

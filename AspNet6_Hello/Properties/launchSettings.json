@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:28712",
+      "applicationUrl": "http://localhost:28712/myrazor/index",
       "sslPort": 44342
     }
   },

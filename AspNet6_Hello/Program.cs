@@ -8,6 +8,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//let logging include http Body data also
+builder.Services.AddHttpLogging(mylog=> {
+
+	mylog.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.All;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,7 +32,7 @@ app.MapControllers();
 app.Use(async (mycontext, nextfunc) =>
 {
 	mycontext.Request.Headers.Add("myheader","myheadervalue") ;
-	mycontext.Response.Headers.Add("myresponceheader", "some response value");
+	mycontext.Response.Headers.Add("myresponseheader", "some response value");
 	mycontext.Response.Headers.XPoweredBy = "Anurag";
 
 	await nextfunc.Invoke(mycontext);

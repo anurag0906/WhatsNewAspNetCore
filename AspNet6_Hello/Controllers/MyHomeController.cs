@@ -16,5 +16,11 @@ namespace AspNet6_Hello.Controllers
 		{
 			return Ok("Hello world : asp 6");  //enable hot reload on save
 		}
+
+		[HttpPost]
+		public IActionResult PostData(string someVal)
+		{
+			return Ok(someVal);
+		}
 	}
 }
